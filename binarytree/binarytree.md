@@ -1,28 +1,54 @@
+![img](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202208041619812.png)
+
+
+
 ![img.png](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202207281617834.png)
 
 
 # 二叉树分类
+## 平衡二叉树
+
+一棵平衡二叉树定义为：一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。
+
+![image-20220803183600284](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202208031836409.png)
+
+
+
+
+
+
+
 ## 满二叉树
+
 满二叉树：如果一棵二叉树只有度为0的结点和度为2的结点，并且度为0的结点在同一层上，则这棵二叉树为满二叉树。
+
+>  满二叉树一定是平衡二叉树！
+
 ![img_1.png](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202207281616924.png)
 
+
+
 ## 完全二叉树
+
 完全二叉树的定义如下：在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，
-并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~ 2^(h-1)  个节点。
+**并且最下面一层的节点都集中在该层最左边的若干位置**。若最底层为第 h 层，则该层包含 1~ 2^(h-1)  个节点。
 之前我们刚刚讲过优先级队列其实是一个堆，堆就是一棵完全二叉树，同时保证父子节点的顺序关系。
+
+> 完全二叉树一定是平衡二叉树
+
 ![img_2.png](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202207281616690.png)
 
 
 ## 二叉搜索树
 前面介绍的树，都没有数值的，而二叉搜索树是有数值的了，二叉搜索树是一个有序树。
-若它的左子树不空，则左子树上所有结点的值均小于它的根结点的值；
-若它的右子树不空，则右子树上所有结点的值均大于它的根结点的值；
+若它的左子树不空，则**左子树上所有结点的值均小于它的根结点的值**；
+若它的右子树不空，则**右子树上所有结点的值均大于它的根结点的值**；
 它的左、右子树也分别为二叉排序树
 下面这两棵树都是搜索树
 
 ![img_3.png](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202207281616575.png)
 ## 平衡二叉搜索树
-平衡二叉搜索树：又被称为AVL（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵空树或它的左右两个子树的高度差的绝对值不超过1，并且左右两个子树都是一棵平衡二叉树。
+平衡二叉搜索树：又被称为AVL（Adelson-Velsky and Landis）树，且具有以下性质：它是一棵空树或它的左右两个子树的**高度差的绝对值不超过1**，并且左右两个子树都是一棵平衡二叉树。
 如图：
 ![img_4.png](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202207281616462.png)
 
@@ -221,6 +247,24 @@
 # 总结
 
 层序遍历确实简单。
+
+递归法注意会使用递归三部曲：
+
+>  确定返回值，确定终止条件，确定单层递归的逻辑。
+
+注意事项：
+
+```java
+            queue.offer(leftOne.left);//懂这里用ArrayDeque要先判断加入进去的是不是null， 如果是空的话源码部分会报错。
+            queue.offer(rightOne.right);//list可以不用判断que是不是负数，所以要常用尽量用LinkedList实现类吧
+
+```
+
+```java
+//一般都用LinkedList来做题，如果能做成功就换成ArrayDeque看看效率能不能提高一些
+```
+
+
 
 # 参考链接
 
