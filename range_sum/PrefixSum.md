@@ -291,7 +291,9 @@ class NumMatrix {
 
 
 
+### 一些补题：
 
+[模拟，前缀和+后缀和——2022年8月14日17:26:03 - 分割字符串的最大得分 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-score-after-splitting-a-string/solution/by-ladidol-xa35/)
 
 
 
