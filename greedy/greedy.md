@@ -1,4 +1,6 @@
-## 原理：
+## 原理：[代码随想录 (programmercarl.com)贪心总结篇](https://programmercarl.com/贪心算法总结篇.html#贪心难题)
+
+
 
 ### 什么是贪心
 
@@ -65,6 +67,12 @@
 ## 题目实战：
 
 ![贪心算法大纲](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/20210917104315.png)
+
+![贪心总结water.png (5000×6845) (myqcloud.com)](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/%E8%B4%AA%E5%BF%83%E6%80%BB%E7%BB%93water.png)
+
+
+
+
 
 ### ① 简单题：
 
