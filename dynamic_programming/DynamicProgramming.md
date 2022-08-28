@@ -115,17 +115,7 @@
 
 [动态规划dp，从记忆性搜索到dp——2022年8月27日00:56:37 - 出界的路径数 - 力扣（LeetCode）](https://leetcode.cn/problems/out-of-boundary-paths/solution/by-ladidol-t4qr/)
 
-
-
-
-
-
-
-
-
-
-
-
+[动态规划dp，二维dp，降维操作——2022年8月27日21:22:38 - 最大得分的路径数目 - 力扣（LeetCode）](https://leetcode.cn/problems/number-of-paths-with-max-score/solution/by-ladidol-es5e/)
 
 ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑== 路径问题个人题解如上 ==↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 
@@ -133,7 +123,7 @@
 
 
 
-> **那有同学问了，j怎么就不拆分呢？**
+> **j怎么就不拆分呢？**
 >
 > j是从1开始遍历，拆分j的情况，在遍历j的过程中其实都计算过了。那么从1遍历j，比较(i - j) * j和dp[i - j] * j 取最大的。递推公式：dp[i] = max(dp[i], max((i - j) * j, dp[i - j] * j));
 >
