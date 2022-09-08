@@ -144,43 +144,75 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
 ### ② 背包问题：
+
+你的背包问题bgm：
 
 [你的背包-陈奕迅(kugou.com)](https://www.kugou.com/share/6pdxl5azCV2.html?id=6pdxl5azCV2#hash=8D288C3652EABA7CA6EF6CEF790CE9AC&album_id=2996291)
 
-背包系列链接：
+背包讲解系列链接：
 
+[0-1背包问题_兴趣使然的小小的博客-CSDN博客](https://blog.csdn.net/qq_51705526/article/details/126576585)
 
+[完全背包问题_兴趣使然的小小的博客-CSDN博客](https://ladidol.blog.csdn.net/article/details/126615384)
+
+题解链接：
+
+[背包问题题解汇总_兴趣使然的小小的博客-CSDN博客](https://blog.csdn.net/qq_51705526/article/details/126576635)
 
 
 
 ### ③ 打家劫舍：
 
-待做
+（当然这里还可以把空间优化到O(1)）
+
+居民家一条线段的排布：[动态规划，dp——2022年9月2日20:50:19 - 打家劫舍 - 力扣（LeetCode）](https://leetcode.cn/problems/house-robber/solution/by-ladidol-fvif/)
+
+居民家围成了一个圈：[动态规划，dp——2022年9月2日21:13:13 - 打家劫舍 II - 力扣（LeetCode）](https://leetcode.cn/problems/house-robber-ii/solution/by-ladidol-g3sk/)
+
+居民家类似二叉树排列（树形dp）：[动态规划，树形dp——2022年9月2日22:35:51 - 打家劫舍 III - 力扣（LeetCode）](https://leetcode.cn/problems/house-robber-iii/solution/by-ladidol-raqn/)
+
+
 
 ### ④ 股票问题：
 
-待做
+这些天只能买一次再卖出：[贪心，二维dp，一维dp——2022年9月3日18:29:31 - 买卖股票的最佳时机 - 力扣（LeetCode）](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/solution/by-ladidol-5xp9/)
+
+这些天能进行多次交易：[贪心，二维dp，一维dp——2022年9月3日19:51:52 - 买卖股票的最佳时机 II - 力扣（LeetCode）](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/solution/by-ladidol-am03/)
+
+这些天能进行最多两次交易：[二维dp——2022年9月3日20:26:22 - 买卖股票的最佳时机 III - 力扣（LeetCode）](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iii/solution/by-ladidol-k65a/)
+
+这些天要进行最多k次交易：[二维dp——2022年9月3日21:22:38 - 买卖股票的最佳时机 IV - 力扣（LeetCode）](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-iv/solution/by-ladidol-hu0e/)
+
+进行交易后一天会冷冻一天：[二维dp——2022年9月4日01:06:17 - 最佳买卖股票时机含冷冻期 - 力扣（LeetCode）](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-cooldown/solution/by-ladidol-cyln/)
+
+这些天能进行多次交易（要交手续费）：[二维dp，贪心——2022年9月4日01:29:24 - 买卖股票的最佳时机含手续费 - 力扣（LeetCode）](https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/solution/by-ladidol-vv6b/)
+
+
 
 ### ⑤ 子序列问题：
 
-待做
+tips：记住，子序列默认不连续，子数组默认连续
+
+tips：有趣的是下面这三个题，dp[i]都是必须包括当前nums[i]的，中间可能就产出最大值了，所以用一个ans来时刻记录最大值。
+
+所求子序列的元素不需要连续：[Java，动态规划，子序列问题（不连续）——2022年9月8日23:36:15 - 最长递增子序列 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-increasing-subsequence/solution/by-ladidol-oj4v/)
+
+所求的子序列元素是连续的：[Java，动态规划，子序列问题（连续）——2022年9月8日23:56:39 - 最长连续递增序列 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-continuous-increasing-subsequence/solution/by-ladidol-ep3z/)
+
+所求的是子数组，是连续的，两个数组：[Java，动态规划，连续子序列问题——2022年9月9日00:41:38 - 最长重复子数组 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-length-of-repeated-subarray/solution/by-ladidol-swvy/)
+
+
+
+
+
+
 
 ### ⑥ 贪心题dp再解决：
 
-
-
 待做
+
+
 
 
 
