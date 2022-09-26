@@ -30,19 +30,22 @@
 - 树状数组能有的操作，线段树一定有；
 - 线段树有的操作，树状数组不一定有。
 - 树状数组的代码要比线段树短，思维更清晰，速度也更快，在解决一些单点修改的问题时，树状数组是不二之选。
-- 整体的时间复杂度O(nlog_2n) 空间复杂度O(n)
+- 整体的时间复杂度$O(nlog_2n)$ 空间复杂度$O(n)$
 
 ### lowbit含义
 
 先上一段代码,可以看到lowbit只有一行操作,而且是位运算,执行效率非常高
 
 ```java
-private int lowbit(int x) {
-    return x & (-x);
+/**
+   * 计算lowBit
+   */
+int lowbit(int x) {
+    return x & -x;
 }
 ```
 
-忘记对饮含义的可以先看一下: [原码、反码、补码，计算机中负数的表示 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/47719434#:~:text= 补码：正数的补码就是其原码；负数的反码%2B1就是补码。 如单字节的5的补码为：0000,0101；-5的原码为1111 1011。 在计算机中，正数是直接用原码表示的，如单字节5，在计算机中就表示为：0000 0101。)
+忘记对应含义的可以先看一下: [原码、反码、补码，计算机中负数的表示 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/47719434#:~:text= 补码：正数的补码就是其原码；负数的反码%2B1就是补码。 如单字节的5的补码为：0000,0101；-5的原码为1111 1011。 在计算机中，正数是直接用原码表示的，如单字节5，在计算机中就表示为：0000 0101。)
 
 ![image-20220725232524083](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/202207252325190.png)
 
@@ -98,28 +101,48 @@ private int lowbit(int x) {
 
 
 ```java
-        /**
+/**
          * 查询树状数组
          */
-        public int query(int x) {
-            int s = 0;
-            while (x != 0) {
-                s += sums[x];
-                x -= lowBit(x);
-            }
-            return s;
-        }
-        /**
-         * 插入数字,初始化
+int query(int x) {
+    int ans = 0;
+    for (int i = x; i > 0; i -= lowbit(i)) {
+        ans += tree[i];
+    }
+    return ans;
+}
+
+/**
+         * 更新数组以及累加和
          */
-        private void insert(int index, int val) {
-            // 下标+1
-            int x = index + 1;
-            while (x < sums.length) {
-                sums[x] = sums[x] + val;
-                x += lowBit(x);
-            }
-        }
+public void update(int i, int val) {
+    add(i + 1, val - nums[i]);
+    nums[i] = val;
+}
+
+/**
+         * 求区间和
+         */
+public int sumRange(int l, int r) {
+    return query(r + 1) - query(l);
+}
+
+
+
+/**
+         * 在x = index+1处加入 add 差值。
+         */
+void add(int x, int u) {
+    for (int i = x; i <= n; i += lowbit(i)) {
+        tree[i] += u;
+    }
+}
+
+
+
+
+
+
 
 
 ```
@@ -128,61 +151,77 @@ private int lowbit(int x) {
 
 ## 模板：
 
-```java
-        /*===================下面是模板==============================*/
-        /**
-         * 插入数字,初始化
-         */
-        private void insert(int index, int val) {
-            // 下标+1
-            int x = index + 1;
-            while (x < sums.length) {
-                sums[x] = sums[x] + val;
-                x += lowBit(x);
-            }
-        }
-        /**
-         * 查询树状数组
-         */
-        public int query(int x) {
-            int s = 0;
-            while (x != 0) {
-                s += sums[x];
-                x -= lowBit(x);
-            }
-            return s;
-        }
+tips：其实就是 307区域和检索-数组可修改 的题解。
 
-        /**
+```java
+//浓缩版
+/*===================下面是模板==============================*/
+class NumArray {
+    // 树状数组
+    int[] tree;
+
+    /**
          * 计算lowBit
          */
-        private int lowBit(int x) {
-            return x & (-x);
+    int lowbit(int x) {
+        return x & -x;
+    }
+    /**
+         * 查询树状数组
+         */
+    int query(int x) {
+        int ans = 0;
+        for (int i = x; i > 0; i -= lowbit(i)) {
+            ans += tree[i];
         }
+        return ans;
+    }
 
-        /**
+    /**
+         * 在index+1处加入 add 差值。
+         */
+    void add(int x, int u) {
+        for (int i = x; i <= n; i += lowbit(i)) {
+            tree[i] += u;
+        }
+    }
+
+    int[] nums;// 修改后的数组存放
+    int n;
+
+    /**
+         * 初始化树状数组
+         */
+    public NumArray(int[] _nums) {
+        nums = _nums;
+        n = nums.length;
+        tree = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            // 原数组长度+1, +1的原因是计算lowbit时,使用下标0会进入死循环
+            add(i + 1, nums[i]);
+        }
+    }
+
+    /**
          * 更新数组以及累加和
          */
-        public void update(int index, int val) {
-            int x = index + 1;
-            while (x < sums.length) {
-                // 减去之前nums[index]的值, 加上新的值
-                sums[x] = sums[x] - nums[index] + val;
-                x += lowBit(x);
-            }
-            nums[index] = val;
-        }
+    public void update(int i, int val) {
+        add(i + 1, val - nums[i]);
+        nums[i] = val;
+    }
 
-        public int sumRange(int left, int right) {
-            return query(right + 1) - query(left);
-        }
+    /**
+         * 求区间和
+         */
+    public int sumRange(int l, int r) {
+        return query(r + 1) - query(l);
+    }
+}
 ```
 
 
 
 ## 题目实战：
-
-### 区域和检索 - 数组可修改
 
 [307. 区域和检索 - 数组可修改 - 力扣（LeetCode）](https://leetcode.cn/problems/range-sum-query-mutable/)
 
@@ -194,77 +233,96 @@ private int lowbit(int x) {
 >
 > 因此我这里直接提供「树状数组」的代码，大家可以直接当做模板背过即可。
 
-
+浓缩版：
 
 ```java
-    class NumArray {
-        // 累加和
-        int[] sums;
-        // 更新后数组
-        int[] nums;
+//浓缩版
+/*===================下面是模板==============================*/
+class NumArray {
+    int n;//数组大小，这里就需要自定义了！
+    // 树状数组
+    int[] tree = new int[n];
+    // 修改后的数组存放
+    int[] nums;
 
-        public NumArray(int[] nums) {
-            // 原数组长度+1, +1的原因是计算lowbit时,使用下标0会进入死循环
-            this.sums = new int[nums.length + 1];
-            this.nums = nums;
-            for (int i = 0; i < nums.length; i++) {
-                // 初始化累加和数组
-                insert(i, nums[i]);
-            }
-        }
 
-        /*===================下面是模板==============================*/
-        /**
-         * 插入数字,初始化
-         */
-        private void insert(int index, int val) {
-            // 下标+1
-            int x = index + 1;
-            while (x < sums.length) {
-                sums[x] = sums[x] + val;
-                x += lowBit(x);
-            }
-        }
-        /**
-         * 查询树状数组
-         */
-        public int query(int x) {
-            int s = 0;
-            while (x != 0) {
-                s += sums[x];
-                x -= lowBit(x);
-            }
-            return s;
-        }
-
-        /**
+    /**
          * 计算lowBit
          */
-        private int lowBit(int x) {
-            return x & (-x);
+    int lowbit(int x) {
+        return x & -x;
+    }
+    /**
+         * 查询树状数组
+         */
+    int query(int x) {
+        int ans = 0;
+        for (int i = x; i > 0; i -= lowbit(i)) {
+            ans += tree[i];
         }
+        return ans;
+    }
 
-        /**
+    /**
+         * 在x = index+1处加入 add 差值。(如果index取不到0，就可以直接x = index)
+         */
+    void add(int x, int u) {
+        for (int i = x; i <= n; i += lowbit(i)) {
+            tree[i] += u;
+        }
+    }
+
+
+
+    /**
+         * 初始化树状数组
+         */
+    public NumArray(int[] _nums) {
+        nums = _nums;
+        n = nums.length;
+        tree = new int[n + 1];
+        for (int i = 0; i < n; i++) {
+            // 原数组长度+1, +1的原因是计算lowbit时,使用下标0会进入死循环
+            add(i + 1, nums[i]);
+        }
+    }
+
+    /**
          * 更新数组以及累加和
          */
-        public void update(int index, int val) {
-            int x = index + 1;
-            while (x < sums.length) {
-                // 减去之前nums[index]的值, 加上新的值
-                sums[x] = sums[x] - nums[index] + val;
-                x += lowBit(x);
-            }
-            nums[index] = val;
-        }
-
-        public int sumRange(int left, int right) {
-            return query(right + 1) - query(left);
-        }
-
+    public void update(int i, int val) {
+        add(i + 1, val - nums[i]);
+        nums[i] = val;
     }
+
+    /**
+         * 求区间和
+         */
+    public int sumRange(int l, int r) {
+        return query(r + 1) - query(l);
+    }
+}
 ```
 
+一些题解：
 
+[Java，简单暴力，树状数组——2022年9月19日23:51:03 - 检查是否区域内所有整数都被覆盖 - 力扣（LeetCode）](https://leetcode.cn/problems/check-if-all-the-integers-in-a-range-are-covered/solution/by-ladidol-qf06/)
+
+[Java，（双）树状数组，乘法原理，抵消计数——2022年9月20日23:01:02 - 统计作战单位数 - 力扣（LeetCode）](https://leetcode.cn/problems/count-number-of-teams/solution/java-by-ladidol-bbmj/)
+
+[【宫水三叶】树状数组（离散化）& 线段树的两种动态开点方式 - 区间和的个数 - 力扣（LeetCode）](https://leetcode.cn/problems/count-of-range-sum/solution/by-ac_oier-b36o/)
+
+
+
+
+
+
+
+## 总结
+
+类似优化的前缀和，这里面的insert就是前缀数组的更新操作，query就是查询下标x的前缀和。
+
+用二进制的机制来优化了前缀和的前缀和的形成操作，从$O(n)$优化成了$O(nlog_2n$
 
 ## 参考链接：
 

@@ -62,6 +62,28 @@ for (选择：本节点所连接的其他节点) {
 
 
 
+题集：
+
+[Java，dfs，贪心，顺序剪枝，可行性剪枝——2022年9月21日00:25:31 - 划分为k个相等的子集 - 力扣（LeetCode）](https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/solution/by-ladidol-w8g5/)
+
+[473. 火柴拼正方形 - 力扣（LeetCode）](https://leetcode.cn/problems/matchsticks-to-square/)
+
+[403. 青蛙过河 题解 - 力扣（LeetCode）](https://leetcode.cn/problems/frog-jump/solution/)
+
+[Java，并查集+dfs——2022年9月16日23:10:39 - 太平洋大西洋水流问题 - 力扣（LeetCode）](https://leetcode.cn/problems/pacific-atlantic-water-flow/solution/by-ladidol-les2/)
+
+[854. 相似度为 K 的字符串 - 力扣（LeetCode）](https://leetcode.cn/problems/k-similar-strings/)
+
+
+
+
+
+
+
+
+
+
+
 ## 引入：
 
 

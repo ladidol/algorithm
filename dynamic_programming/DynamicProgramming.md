@@ -202,6 +202,22 @@ tips：有趣的是下面这三个题，dp[i]都是必须包括当前nums[i]的�
 
 所求的是子数组，是连续的，两个数组：[Java，动态规划，连续子序列问题——2022年9月9日00:41:38 - 最长重复子数组 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-length-of-repeated-subarray/solution/by-ladidol-swvy/)
 
+所求的是子序列，可以不连续，两个数组：[Java，动态规划，不连续子序列问题——2022年9月9日19:30:45 - 最长公共子序列 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-common-subsequence/solution/by-ladidol-r6mf/)
+
+所求的是不相交线，其实就是上面这个题的copy：[Java，动态规划，不连续子序列问题——2022年9月9日22:19:51 - 不相交的线 - 力扣（LeetCode）](https://leetcode.cn/problems/uncrossed-lines/solution/by-ladidol-bnem/)
+
+所求是最大子数组之和，连续。[Java，动态规划，不连续子序列问题，贪心——2022年9月9日22:42:36 - 最大子数组和 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-subarray/solution/t-by-ladidol-juon/)
+
+> 编辑距离（特别篇）：
+
+看看相等的部分长度是不是符合s串：[Java，动态规划，不连续子串问题——2022年9月11日22:05:06 - 判断子序列 - 力扣（LeetCode）](https://leetcode.cn/problems/is-subsequence/solution/by-ladidol-kxwe/)
+
+待做todo
+
+
+
+
+
 
 
 
