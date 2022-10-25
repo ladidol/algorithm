@@ -272,3 +272,12 @@
 
 
 
+# 候补题集
+
+
+
+[Java，二叉搜索树遍历，分情况讨论——2022年10月4日21:56:38 - 删除二叉搜索树中的节点 - 力扣（LeetCode）](https://leetcode.cn/problems/delete-node-in-a-bst/solution/by-ladidol-lrlq/)
+
+[Java，bfs和dfs的序列化和反序列化——2022年10月14日14:48:41 - 二叉树的序列化与反序列化 - 力扣（LeetCode）](https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/solution/by-ladidol-xh8j/)
+
+[Java，暴力遍历，可以用前缀和来操作——2022年10月14日15:47:23 - 路径总和 III - 力扣（LeetCode）](https://leetcode.cn/problems/path-sum-iii/solution/java-by-ladidol-1tk0/)

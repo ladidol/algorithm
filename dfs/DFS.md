@@ -62,9 +62,27 @@ for (选择：本节点所连接的其他节点) {
 
 
 
+一些前置知识：[【最短路/必背模板】涵盖所有的「存图方式」与「最短路算法（详尽注释）」 (qq.com)](https://mp.weixin.qq.com/s/2Ba8-NI7lQh2_MvMpg-CZg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 题集：
 
 [Java，dfs，贪心，顺序剪枝，可行性剪枝——2022年9月21日00:25:31 - 划分为k个相等的子集 - 力扣（LeetCode）](https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/solution/by-ladidol-w8g5/)
+
+[Java，dfs，visit数组记录——2022年10月20日18:25:45 - 单词搜索 - 力扣（LeetCode）](https://leetcode.cn/problems/word-search/solution/javadfs-by-ladidol-3fdx/)
 
 [473. 火柴拼正方形 - 力扣（LeetCode）](https://leetcode.cn/problems/matchsticks-to-square/)
 
@@ -74,7 +92,7 @@ for (选择：本节点所连接的其他节点) {
 
 [854. 相似度为 K 的字符串 - 力扣（LeetCode）](https://leetcode.cn/problems/k-similar-strings/)
 
-
+[Java，dfs+bfs+染色——2022年10月25日16:14:22 - 最短的桥 - 力扣（LeetCode）](https://leetcode.cn/problems/shortest-bridge/solution/java-by-ladidol-6tve/)
 
 
 

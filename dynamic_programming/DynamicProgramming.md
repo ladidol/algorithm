@@ -198,7 +198,7 @@ tips：有趣的是下面这三个题，dp[i]都是必须包括当前nums[i]的�
 
 所求子序列的元素不需要连续：[Java，动态规划，子序列问题（不连续）——2022年9月8日23:36:15 - 最长递增子序列 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-increasing-subsequence/solution/by-ladidol-oj4v/)
 
-所求的子序列元素是连续的：[Java，动态规划，子序列问题（连续）——2022年9月8日23:56:39 - 最长连续递增序列 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-continuous-increasing-subsequence/solution/by-ladidol-ep3z/)
+所求的子序列元素是连续的：[Java，动态规划，子序列问题（连续），常数dp——2022年9月8日23:56:39 - 最长连续递增序列 - 力扣（LeetCode）](https://leetcode.cn/problems/longest-continuous-increasing-subsequence/solution/by-ladidol-ep3z/)
 
 所求的是子数组，是连续的，两个数组：[Java，动态规划，连续子序列问题——2022年9月9日00:41:38 - 最长重复子数组 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-length-of-repeated-subarray/solution/by-ladidol-swvy/)
 
@@ -210,11 +210,29 @@ tips：有趣的是下面这三个题，dp[i]都是必须包括当前nums[i]的�
 
 > 编辑距离（特别篇）：
 
+**求长度才会在状态转移方程上有加一的操作。**
+
 看看相等的部分长度是不是符合s串：[Java，动态规划，不连续子串问题——2022年9月11日22:05:06 - 判断子序列 - 力扣（LeetCode）](https://leetcode.cn/problems/is-subsequence/solution/by-ladidol-kxwe/)
 
-待做todo
+看看相等的时候有两种途径[Java，动态规划，子串匹配——2022年10月2日19:08:41 - 不同的子序列 - 力扣（LeetCode）](https://leetcode.cn/problems/distinct-subsequences/solution/by-ladidol-c0ck/)
+
+字符串的删除操作，注意看相等的时候[Java，动态规划，字符串匹配删除问题——2022年10月2日20:23:50 - 两个字符串的删除操作 - 力扣（LeetCode）](https://leetcode.cn/problems/delete-operation-for-two-strings/solution/by-ladidol-x001/)
+
+注意关键操作的转化思维：[Java，动态规划，删除元素 - 编辑距离 - 力扣（LeetCode）](https://leetcode.cn/problems/edit-distance/solution/java-by-ladidol-co67/)
+
+[代码随想录 (programmercarl.com)](https://programmercarl.com/为了绝杀编辑距离，卡尔做了三步铺垫.html#两个字符串的删除操作)
+
+> 回文问题：
+
+待做。
 
 
+
+
+
+**待做todo:**
+
+[124. 二叉树中的最大路径和 - 力扣（LeetCode）](https://leetcode.cn/problems/binary-tree-maximum-path-sum/)最大子数组和是这题的线性版本[经典动态规划问题（理解「无后效性」） - 最大子数组和 - 力扣（LeetCode）](https://leetcode.cn/problems/maximum-subarray/solution/dong-tai-gui-hua-fen-zhi-fa-python-dai-ma-java-dai/)
 
 
 
