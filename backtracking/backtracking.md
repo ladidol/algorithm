@@ -204,7 +204,7 @@ N皇后：
 
 ![img](https://figurebed-ladidol.oss-cn-chengdu.aliyuncs.com/img/2020111720451790.png)
 
-[回溯，递归，DFS，二维递归——2022年8月12日15:58:20 - 解数独 - 力扣（LeetCode）](https://leetcode.cn/problems/sudoku-solver/solution/hui-su-di-gui-by-ladidol-yw7q/)
+[Java，回溯+二维递归or记忆性搜索+回溯——2022年8月12日15:58:20 - 解数独 - 力扣（LeetCode）](https://leetcode.cn/problems/sudoku-solver/solution/hui-su-di-gui-by-ladidol-yw7q/)
 
 ### ⑥ 其他：
 
